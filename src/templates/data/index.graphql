@@ -1,0 +1,54 @@
+{
+  page:getHomePage {
+    _id
+    bannerButtonContent
+    bannerButtonText
+    bannerDescription
+    bannerFeaturedImage {
+      _id
+      caption
+      credit
+      description
+      filename
+      mimeType
+      path
+      sourceUrl
+      title
+      uploadStatus
+    }
+    bannerHeading
+    categories {
+      _id
+      categoryTitle
+      definition
+      icon {
+        _id
+        caption
+        credit
+        description
+        filename
+        mimeType
+        path
+        sourceUrl
+        title
+        uploadStatus
+      }
+    }
+    introQuote
+  }
+ watches:getArticleList(sort: [{field: "publishDate", order: "desc"}] size:4) {
+        items{
+        title
+        excerpt
+        publishDate
+        _updatedAt
+       articleImage {
+        filename
+        mimeType
+        path
+        uploadStatus
+      }
+        
+      }
+    }
+}

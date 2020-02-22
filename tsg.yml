@@ -1,0 +1,39 @@
+templatePath: src/templates
+staticPath: static
+buildPath: build
+context:
+  home: data/index.graphql
+routes:
+  homepage:
+    path: /
+    template: pages/index.html
+    context: data/index.graphql
+  categories:
+    path: /category/:categoryTitle
+    template: pages/category.html
+    paginate:
+      data: data/category.graphql
+      itemName: category
+  articles:
+    path: /article/:title/
+    template: pages/article.html
+    paginate:
+      data: data/articles.graphql
+      itemName: article
+
+  articlepage:
+    path: /article
+    template: pages/article.html
+    context: data/index.graphql
+  latestArticle:
+    path: /latest/article
+    template: pages/article.html
+    context: data/index.graphql
+  glossary:
+    path: /glossary
+    template: pages/glossary.html
+    context: data/index.graphql
+  ranking:
+    path: /ranking
+    template: pages/ranking.html
+    context: data/index.graphql
